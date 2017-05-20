@@ -222,11 +222,13 @@ func applyXOR(l, r Expr) (*BooleanLiteral, error) {
 	)
 	a, err = getBoolean(l)
 	if err != nil {
-		return nil, err
+		fmt.Println(err)
+		return falseExpr, nil
 	}
 	b, err = getBoolean(r)
 	if err != nil {
-		return nil, err
+		fmt.Println(err)
+		return falseExpr, nil
 	}
 	return &BooleanLiteral{Val: (a != b)}, nil
 }
@@ -239,11 +241,13 @@ func applyNAND(l, r Expr) (*BooleanLiteral, error) {
 	)
 	a, err = getBoolean(l)
 	if err != nil {
-		return nil, err
+		fmt.Println(err)
+		return falseExpr, nil
 	}
 	b, err = getBoolean(r)
 	if err != nil {
-		return nil, err
+		fmt.Println(err)
+		return falseExpr, nil
 	}
 	return &BooleanLiteral{Val: (!(a && b))}, nil
 }
@@ -256,11 +260,13 @@ func applyAND(l, r Expr) (*BooleanLiteral, error) {
 	)
 	a, err = getBoolean(l)
 	if err != nil {
-		return nil, err
+		fmt.Println(err)
+		return falseExpr, nil
 	}
 	b, err = getBoolean(r)
 	if err != nil {
-		return nil, err
+		fmt.Println(err)
+		return falseExpr, nil
 	}
 	return &BooleanLiteral{Val: (a && b)}, nil
 }
@@ -273,11 +279,13 @@ func applyOR(l, r Expr) (*BooleanLiteral, error) {
 	)
 	a, err = getBoolean(l)
 	if err != nil {
-		return nil, err
+		fmt.Println(err)
+		return falseExpr, nil
 	}
 	b, err = getBoolean(r)
 	if err != nil {
-		return nil, err
+		fmt.Println(err)
+		return falseExpr, nil
 	}
 	return &BooleanLiteral{Val: (a || b)}, nil
 }
@@ -360,11 +368,13 @@ func applyGT(l, r Expr) (*BooleanLiteral, error) {
 	)
 	a, err = getNumber(l)
 	if err != nil {
-		return nil, err
+		fmt.Println(err)
+		return falseExpr, nil
 	}
 	b, err = getNumber(r)
 	if err != nil {
-		return nil, err
+		fmt.Println(err)
+		return falseExpr, nil
 	}
 	return &BooleanLiteral{Val: (a > b)}, nil
 }
@@ -377,11 +387,13 @@ func applyGTE(l, r Expr) (*BooleanLiteral, error) {
 	)
 	a, err = getNumber(l)
 	if err != nil {
-		return nil, err
+		fmt.Println(err)
+		return falseExpr, nil
 	}
 	b, err = getNumber(r)
 	if err != nil {
-		return nil, err
+		fmt.Println(err)
+		return falseExpr, nil
 	}
 	return &BooleanLiteral{Val: (a >= b)}, nil
 }
@@ -394,11 +406,13 @@ func applyLT(l, r Expr) (*BooleanLiteral, error) {
 	)
 	a, err = getNumber(l)
 	if err != nil {
-		return nil, err
+		fmt.Println(err)
+		return falseExpr, nil
 	}
 	b, err = getNumber(r)
 	if err != nil {
-		return nil, err
+		fmt.Println(err)
+		return falseExpr, nil
 	}
 	return &BooleanLiteral{Val: (a < b)}, nil
 }
@@ -411,11 +425,13 @@ func applyLTE(l, r Expr) (*BooleanLiteral, error) {
 	)
 	a, err = getNumber(l)
 	if err != nil {
-		return falseExpr, err
+		fmt.Println(err)
+		return falseExpr, nil
 	}
 	b, err = getNumber(r)
 	if err != nil {
-		return falseExpr, err
+		fmt.Println(err)
+		return falseExpr, nil
 	}
 	return &BooleanLiteral{Val: (a <= b)}, nil
 }
