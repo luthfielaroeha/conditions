@@ -302,7 +302,8 @@ func applyEQ(l, r Expr) (*BooleanLiteral, error) {
 	if err == nil {
 		bs, err = getString(r)
 		if err != nil {
-			return falseExpr, fmt.Errorf("Cannot compare string with non-string")
+			fmt.Println("Cannot compare string with non-string")
+			return falseExpr, nil
 		}
 		return &BooleanLiteral{Val: (as == bs)}, nil
 	}
@@ -310,7 +311,8 @@ func applyEQ(l, r Expr) (*BooleanLiteral, error) {
 	if err == nil {
 		bn, err = getNumber(r)
 		if err != nil {
-			return falseExpr, fmt.Errorf("Cannot compare number with non-number")
+			fmt.Println("Cannot compare number with non-number")
+			return falseExpr, nil
 		}
 		return &BooleanLiteral{Val: (an == bn)}, nil
 	}
@@ -318,7 +320,8 @@ func applyEQ(l, r Expr) (*BooleanLiteral, error) {
 	if err == nil {
 		bb, err = getBoolean(r)
 		if err != nil {
-			return falseExpr, fmt.Errorf("Cannot compare boolean with non-boolean")
+			fmt.Println("Cannot compare boolean with non-boolean")
+			return falseExpr, nil
 		}
 		return &BooleanLiteral{Val: (ab == bb)}, nil
 	}
@@ -337,7 +340,8 @@ func applyNQ(l, r Expr) (*BooleanLiteral, error) {
 	if err == nil {
 		bs, err = getString(r)
 		if err != nil {
-			return falseExpr, fmt.Errorf("Cannot compare string with non-string")
+			fmt.Println("Cannot compare string with non-string")
+			return falseExpr, nil
 		}
 		return &BooleanLiteral{Val: (as != bs)}, nil
 	}
@@ -345,7 +349,8 @@ func applyNQ(l, r Expr) (*BooleanLiteral, error) {
 	if err == nil {
 		bn, err = getNumber(r)
 		if err != nil {
-			return falseExpr, fmt.Errorf("Cannot compare number with non-number")
+			fmt.Println("Cannot compare number with non-number")
+			return falseExpr, nil
 		}
 		return &BooleanLiteral{Val: (an != bn)}, nil
 	}
@@ -353,7 +358,8 @@ func applyNQ(l, r Expr) (*BooleanLiteral, error) {
 	if err == nil {
 		bb, err = getBoolean(r)
 		if err != nil {
-			return falseExpr, fmt.Errorf("Cannot compare boolean with non-boolean")
+			fmt.Println("Cannot compare boolean with non-boolean")
+			return falseExpr, nil
 		}
 		return &BooleanLiteral{Val: (ab != bb)}, nil
 	}
